@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37d35768-7cf6-45e0-a2bf-4a04523027ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/OCS_portal_project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/middleware/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/middleware/auth_middleware.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/recruiter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/student.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/utils/validators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +38,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "main"
   }
 }]]></component>
   <component name="SharedIndexes">
