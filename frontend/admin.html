@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - OCS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .stat-card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: bold; color: #b71c1c; }
+    </style>
+</head>
+<body>
+    <nav class="navbar" style="background: #1a237e;"> <div class="nav-brand">OCS Admin Console</div>
+        <div class="nav-user">
+            <span id="userDisplay">Admin</span>
+            <button onclick="logout()" class="btn-logout">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="count-users">-</div>
+                <div>Total Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="count-profiles">-</div>
+                <div>Active Profiles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="count-applications">-</div>
+                <div>Total Applications</div>
+            </div>
+        </div>
+
+        <h2>Manage All Applications</h2>
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Admin Action</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-apps-table">
+                    </tbody>
+            </table>
+        </div>
+
+        <h2 style="margin-top: 3rem;">User Database</h2>
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-users-table">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - OCS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">OCS Portal</div>
+        <div class="nav-user">
+            <span id="userDisplay">Student</span>
+            <button onclick="logout()" class="btn-logout">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="loading" class="status-message">Loading dashboard...</div>
+
+        <div id="offer-view" style="display: none;">
+            <div class="card offer-card">
+                <h2 id="offer-title">🎉 Congratulations!</h2>
+                <p id="offer-message">You have an update on your application.</p>
+
+                <div class="offer-details">
+                    <h3 id="offer-company">Company Name</h3>
+                    <p id="offer-role">Role Designation</p>
+                    <div class="status-badge" id="offer-status">Selected</div>
+                </div>
+
+                <div id="offer-actions" class="action-buttons">
+                    <button id="btn-accept" class="btn-success">Accept Offer</button>
+                    <button id="btn-reject" class="btn-danger">Reject Offer</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="browsing-view" style="display: none;">
+            <h2>Available Opportunities</h2>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="profiles-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/student.js"></script>
+</body>
+</html>

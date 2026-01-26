@@ -1,0 +1,272 @@
+/* --- 1. Variables & Reset --- */
+:root {
+    /* Professional Palette */
+    --primary: #0f172a;       /* Navy Blue (Professional) */
+    --primary-hover: #334155; /* Lighter Navy */
+    --accent: #2563eb;        /* Bright Blue for actions */
+    --success: #059669;       /* Emerald Green */
+    --danger: #dc2626;        /* Red */
+    --bg-page: #f8fafc;       /* Very Light Gray Background */
+    --bg-surface: #ffffff;    /* White Surface */
+    --border: #e2e8f0;        /* Subtle Border Gray */
+    --text-main: #1e293b;     /* Dark Slate Text */
+    --text-muted: #64748b;    /* Muted Text */
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif; /* Clean, modern font */
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 2. Layout & Proportions --- */
+
+/* The Navbar stays fixed at the top */
+.navbar {
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%; /* Proportionate padding */
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-brand {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+}
+
+.nav-user {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Main Content Container - Centered and Proportionate */
+.container {
+    width: 90%;            /* Takes 90% of window width */
+    max-width: 1200px;     /* Stops growing after 1200px */
+    margin: 2rem auto;     /* Centered horizontally */
+    flex: 1;               /* Fills remaining vertical space */
+}
+
+/* --- 3. Login Page Specifics --- */
+/* Centers the login box perfectly in the window */
+body:has(.login-container) {
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: var(--bg-surface);
+    width: 100%;
+    max-width: 400px;      /* Professional width for forms */
+    padding: 2.5rem;
+    border: 1px solid var(--border); /* Border instead of shadow */
+    border-radius: 8px;
+}
+
+.login-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.login-header h1 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+.login-header h2 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* --- 4. Forms & Inputs --- */
+.form-group { margin-bottom: 1.25rem; }
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: var(--text-main);
+}
+
+input, select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text-main);
+    transition: border-color 0.15s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent); /* Blue border on focus */
+}
+
+/* --- 5. Buttons --- */
+button {
+    cursor: pointer;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.15s ease;
+}
+
+/* Primary Button (Login, Apply) */
+#loginBtn, .btn-apply {
+    background-color: var(--primary);
+    color: white;
+    width: 100%;
+}
+#loginBtn:hover, .btn-apply:hover { background-color: var(--primary-hover); }
+
+/* Logout Button (Ghost style) */
+.btn-logout {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.8rem;
+}
+.btn-logout:hover {
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+
+/* Action Buttons */
+.btn-success { background-color: var(--success); color: white; }
+.btn-danger { background-color: var(--danger); color: white; }
+.btn-sm { padding: 0.3rem 0.6rem; font-size: 0.8rem; margin-right: 4px;}
+
+/* --- 6. Cards & Dashboard --- */
+.card, .offer-card, .stat-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border); /* Clean border */
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.offer-card {
+    text-align: center;
+    border-top: 4px solid var(--success); /* Green accent top */
+}
+
+.offer-details {
+    background: var(--bg-page);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin: 1.5rem 0;
+}
+
+/* Stats Grid for Admin */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+/* Responsive: Switch to 1 column on mobile */
+@media (max-width: 768px) {
+    .stats-grid { grid-template-columns: 1fr; }
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* --- 7. Tables --- */
+.table-responsive {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden; /* Clips corners */
+    background: var(--bg-surface);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.data-table th {
+    background: #f1f5f9; /* Light gray header */
+    text-align: left;
+    padding: 0.8rem 1.2rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+}
+
+.data-table td {
+    padding: 0.8rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table tr:last-child td { border-bottom: none; }
+
+/* --- 8. Status Badges --- */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid transparent; /* Prepare for border */
+}
+
+/* Badge variants with subtle borders instead of solid blocks */
+.status-applied {
+    background: #eff6ff; color: #1d4ed8; border-color: #dbeafe;
+}
+.status-selected {
+    background: #f0fdf4; color: #15803d; border-color: #dcfce7;
+}
+.status-not-selected {
+    background: #fef2f2; color: #b91c1c; border-color: #fee2e2;
+}
+.status-accepted {
+    background: #0f172a; color: #fff; /* Solid dark for Accepted */
+}
+
+/* --- 9. Utilities --- */
+.error-message {
+    background: #fef2f2;
+    color: #b91c1c;
+    padding: 0.8rem;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.inline-form {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.inline-form input { flex: 1; }
+.inline-form button { width: auto; }

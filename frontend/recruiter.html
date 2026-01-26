@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Dashboard - OCS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">OCS Recruiter Portal</div>
+        <div class="nav-user">
+            <span id="userDisplay">Recruiter</span>
+            <button onclick="logout()" class="btn-logout">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card" style="margin-bottom: 2rem;">
+            <h3>📝 Post a New Job</h3>
+            <form id="createProfileForm" class="inline-form">
+                <input type="text" id="companyName" placeholder="Company Name" required>
+                <input type="text" id="designation" placeholder="Job Designation (e.g., ML Intern)" required>
+                <button type="submit" class="btn-apply">Create Profile</button>
+            </form>
+        </div>
+
+        <h2>Manage Applications</h2>
+        <p class="subtitle">View and select students who have applied to your profiles.</p>
+
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Profile ID</th>
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Student ID</th>
+                        <th>Current Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="applications-table-body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/recruiter.js"></script>
+</body>
+</html>
