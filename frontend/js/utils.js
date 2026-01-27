@@ -1,7 +1,7 @@
-// Configuration
-const API_BASE_URL = 'http://127.0.0.1:3000'; // Change this if deploying to Vercel later
 
-// Helper to get auth headers
+const API_BASE_URL = '/api';
+
+
 function getAuthHeaders() {
     const token = localStorage.getItem('token');
     return {
@@ -10,7 +10,7 @@ function getAuthHeaders() {
     };
 }
 
-// Check if user is logged in
+
 function checkAuth() {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -18,7 +18,7 @@ function checkAuth() {
     }
 }
 
-// Logout function
+
 function logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('role');

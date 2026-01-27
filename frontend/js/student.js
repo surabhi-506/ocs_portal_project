@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkAuth(); // From utils.js
     loadDashboard();
 
-    // Set user ID in header
+
     document.getElementById('userDisplay').textContent = localStorage.getItem('userid');
 });
 
@@ -26,18 +26,18 @@ async function loadDashboard() {
         loading.style.display = 'none';
 
         if (activeOffer) {
-            // === LOCKED MODE ===
+
             console.log("User is locked by offer:", activeOffer);
             browsingView.style.display = 'none';
             offerView.style.display = 'block';
             renderOfferView(activeOffer);
         } else {
-            // === BROWSING MODE ===
+
             console.log("User is free to browse");
             offerView.style.display = 'none';
             browsingView.style.display = 'block';
 
-            // Now safe to fetch profiles
+
             loadProfiles(myAppsData.applications);
         }
 
