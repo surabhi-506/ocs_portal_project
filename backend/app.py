@@ -55,8 +55,9 @@ if __name__ == '__main__':
         print(f"❌ Configuration Error: {e}")
         exit(1)
 
-    app = create_app()
-    print(f"✅ Server starting on port {config.PORT}...")
+app = create_app()
 
-    # This runs the server locally. Vercel ignores this block automatically.
+
+if __name__ == '__main__':
+    print(f"✅ Server starting on port {config.PORT}...")
     app.run(host='0.0.0.0', port=config.PORT, debug=config.DEBUG)
