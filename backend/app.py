@@ -17,8 +17,11 @@ def create_app():
     # Enable CORS (Allows your frontend to talk to this backend)
     CORS(app)
 
-
+    # Register Blueprints (The API Routes)
+    # FIX: We added url_prefix='/api' to auth_bp so it matches the frontend request
     app.register_blueprint(auth_bp, url_prefix='/api')
+
+    # These were already correct, but good to double-check!
     app.register_blueprint(student_bp, url_prefix='/api/student')
     app.register_blueprint(recruiter_bp, url_prefix='/api/recruiter')
     app.register_blueprint(admin_bp, url_prefix='/api/admin')
@@ -53,6 +56,7 @@ if __name__ == '__main__':
         exit(1)
 
     app = create_app()
-
     print(f"✅ Server starting on port {config.PORT}...")
+
+    # This runs the server locally. Vercel ignores this block automatically.
     app.run(host='0.0.0.0', port=config.PORT, debug=config.DEBUG)
