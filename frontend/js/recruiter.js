@@ -14,7 +14,7 @@ async function createProfile(e) {
     const designation = document.getElementById('designation').value;
 
     try {
-        const response = await fetch(`${API_BASE_URL}/api/recruiter/create_profile`, {
+        const response = await fetch(`${API_BASE_URL}/recruiter/create_profile`, {
             method: 'POST',
             headers: getAuthHeaders(),
             body: JSON.stringify({

@@ -8,7 +8,7 @@ async function loadAdminData() {
         const headers = getAuthHeaders();
 
         // 1. Fetch Users
-        const usersRes = await fetch(`${API_BASE_URL}/api/admin/users`, { headers });
+        const usersRes = await fetch(`${API_BASE_URL}/admin/users`, { headers });
         const usersData = await usersRes.json();
         renderUsers(usersData.users);
 

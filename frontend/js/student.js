@@ -13,7 +13,7 @@ async function loadDashboard() {
 
     try {
         // 1. First, check my own status (Are we locked?)
-        const myAppsResponse = await fetch(`${API_BASE_URL}/api/student/applications/mine`, {
+        const myAppsResponse = await fetch(`${API_BASE_URL}/student/applications/mine`, {
             headers: getAuthHeaders()
         });
         const myAppsData = await myAppsResponse.json();
