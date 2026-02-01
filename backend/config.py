@@ -1,12 +1,9 @@
-"""
-Configuration settings for the application
-Loads environment variables from .env file
-"""
+
 
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+
 load_dotenv()
 
 
@@ -30,7 +27,7 @@ class Config:
 
     @staticmethod
     def validate():
-        """Validate that all required configuration is present"""
+
         if not Config.DATABASE_URL:
             raise ValueError("DATABASE_URL environment variable is not set!")
         if not Config.JWT_SECRET:
