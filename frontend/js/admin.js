@@ -13,11 +13,11 @@ async function loadAdminData() {
         renderUsers(usersData.users);
 
         // 2. Fetch Profiles (for stats only)
-        const profilesRes = await fetch(`${API_BASE_URL}/api/admin/profiles`, { headers });
+        const profilesRes = await fetch(`${API_BASE_URL}/admin/profiles`, { headers });
         const profilesData = await profilesRes.json();
 
         // 3. Fetch Applications
-        const appsRes = await fetch(`${API_BASE_URL}/api/admin/applications`, { headers });
+        const appsRes = await fetch(`${API_BASE_URL}/admin/applications`, { headers });
         const appsData = await appsRes.json();
         renderApplications(appsData.applications);
 
@@ -84,7 +84,7 @@ async function adminChangeStatus(selectElem, profileCode, studentId) {
     }
 
     try {
-        const response = await fetch(`${API_BASE_URL}/api/recruiter/application/change_status`, {
+        const response = await fetch(`${API_BASE_URL}/recruiter/application/change_status`, {
             method: 'POST',
             headers: getAuthHeaders(),
             body: JSON.stringify({
