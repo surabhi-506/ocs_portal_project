@@ -39,7 +39,7 @@ async function createProfile(e) {
 
 async function loadApplications() {
     try {
-        const response = await fetch(`${API_BASE_URL}/api/recruiter/applications`, {
+        const response = await fetch(`${API_BASE_URL}/recruiter/applications`, {
             headers: getAuthHeaders()
         });
 
@@ -91,7 +91,7 @@ async function updateStatus(profileCode, studentId, newStatus) {
     if (!confirm(`Change status of ${studentId} to '${newStatus}'?`)) return;
 
     try {
-        const response = await fetch(`${API_BASE_URL}/api/recruiter/application/change_status`, {
+        const response = await fetch(`${API_BASE_URL}/recruiter/application/change_status`, {
             method: 'POST',
             headers: getAuthHeaders(),
             body: JSON.stringify({

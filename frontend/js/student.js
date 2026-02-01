@@ -75,7 +75,7 @@ function renderOfferView(offer) {
 
 async function loadProfiles(myApplications) {
     try {
-        const response = await fetch(`${API_BASE_URL}/api/student/profiles`, {
+        const response = await fetch(`${API_BASE_URL}/student/profiles`, {
             headers: getAuthHeaders()
         });
 
@@ -122,7 +122,7 @@ async function applyToJob(profileCode) {
     if(!confirm("Are you sure you want to apply?")) return;
 
     try {
-        const response = await fetch(`${API_BASE_URL}/api/student/apply`, {
+        const response = await fetch(`${API_BASE_URL}/student/apply`, {
             method: 'POST',
             headers: getAuthHeaders(),
             body: JSON.stringify({ profile_code: profileCode })
@@ -146,7 +146,7 @@ async function respondToOffer(profileCode, action) {
     if(!confirm(`Are you sure you want to ${action.toUpperCase()} this offer? This cannot be undone.`)) return;
 
     try {
-        const response = await fetch(`${API_BASE_URL}/api/student/application/${action}`, {
+        const response = await fetch(`${API_BASE_URL}/student/application/${action}`, {
             method: 'POST',
             headers: getAuthHeaders(),
             body: JSON.stringify({ profile_code: profileCode })
